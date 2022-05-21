@@ -78,7 +78,7 @@ p_3(a)\sim&\frac{1080\sqrt{a}}{\sqrt{2\pi}(45a+540)-\sqrt{a}(32 a+360)}
 
 然后对求 $p_1(a)$ 反函数, 得到 $a(p)$ 的一阶近似:
 
-$$a_1(p) = \frac{9 \pi  p^2}{2 (p+3)^2}$$
+$$a_1(p) = \frac{9 \pi}{2}\frac{p^2}{(p+3)^2}$$
 
 同理可得二阶近似:
 
@@ -113,3 +113,59 @@ $$n \approx \sqrt{\frac{2}{9 \pi } \left(\frac{3}{p}+1\right)^2+\frac{1}{4}}-\fr
 
 保底这个性质是 不大的时候, 确切的说 10% 才有的, 接着保底次数会平方增长
 
+
+$$
+\begin{aligned}
+x_1&=2^{2/5} \left(\sqrt[5]{2}-1\right)\\
+x_2&=2 i \sqrt{2} \cos \left(\frac{1}{10} (\pi +i \log (2))\right)\\
+x_3&=2^{2/5}\sqrt[5]{-1}+(-1)^{4/5} 2^{3/5}\\
+x_4&=-2 i \sqrt{2} \sin \left(\frac{1}{10} (2 \pi -i \log (2))\right)\\
+x_5&=-(-2)^{2/5} \left(1+\sqrt[5]{-2}\right)
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+0&=281474976710656 x^{48}-3377699720527872 x^{46}+18999560927969280 x^{44}-66568831992070144 x^{42}+162828875980603392 x^{40}\\
+&-295364007592722432 x^{38}+411985976135516160 x^{36}-452180272956309504 x^{34}+396366279591591936 x^{32}-280058255978266624 x^{30}\\
+&+160303703377575936 x^{28}-74448984852135936 x^{26}+28011510450094080 x^{24}-8500299631165440 x^{22}+2064791072931840 x^{20}\\
+&-397107008634880 x^{18}+59570604933120 x^{16}-6832518856704 x^{14}+583456329728 x^{12}-35782471680 x^{10}\\
+&+1497954816 x^8-39625728 x^6+579456 x^4-3456 x^2+1
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+0&=281474976710656 x^{48}-3377699720527872 x^{46}+18999560927969280 x^{44}-66568831992070144 x^{42}+162828875980603392 x^{40}\\
+&-295364007592722432 x^{38}+411985976135516160 x^{36}-452180272956309504 x^{34}+396366279591591936 x^{32}-280058255978266624 x^{30}\\
+&+160303703377575936 x^{28}-74448984852135936 x^{26}+28011510450094080 x^{24}-8500299631165440 x^{22}+2064791072931840 x^{20}\\
+&-397107008634880 x^{18}+59570604933120 x^{16}-6832518856704 x^{14}+583456329728 x^{12}-35782471680 x^{10}\\
+&+1497954816 x^8-39625728 x^6+579456 x^4-3456 x^2+1
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\cos1°&=\frac{i+1}{4} \left(i \sqrt{2} \alpha _2 \left(\omega _1\sqrt[3]{\omega _2} +i \omega _2 \sqrt[3]{\omega _1}\right)-\sqrt[4]{5} \sqrt{\alpha _1} \left(\omega _1 \sqrt[3]{\omega _2}-i \omega _2\sqrt[3]{\omega _1} \right)\right) \\
+\sin1°&=\frac{i-1}{4} \left(i \sqrt{2} \alpha _2 \left(\omega _1 \sqrt[3]{\omega _2}-i \omega _2\sqrt[3]{\omega _1} \right)-\sqrt[4]{5} \sqrt{\alpha _1} \left(\omega _1\sqrt[3]{\omega _2} +i \omega _2 \sqrt[3]{\omega _1}\right)\right) \\
+\tan1°&=i\cdot\frac{\sqrt[4]{5} \sqrt{\alpha _1} \left(\omega _1^{2/3}+i \omega _2^{2/3}\right)-i \sqrt{2} \alpha _2 \left(\omega _1^{2/3}-i \omega _2^{2/3}\right)}{\sqrt[4]{5} \sqrt{\alpha _1} \left(\omega _1^{2/3}-i \omega _2^{2/3}\right)-i \sqrt{2} \alpha _2 \left(\omega _1^{2/3}+i \omega _2^{2/3}\right)} \\
+\end{aligned}
+$$
+
+注意到 $\omega_2 = (\omega_1)^2$, 做代换 $\omega_1=\omega, \omega_2=\omega^2$.
+
+上式可以进一步化简为:
+
+$$
+\begin{aligned}
+\cos1°&=\frac{1-i}{4\sqrt[3]{\omega}}
+\left(i \sqrt{2} \alpha _2 \left(i-\omega^{2/3}\right)-\sqrt[4]{5} \sqrt{\alpha _1} \left(i+\omega^{2/3}\right)\right)\\
+\sin1°&=\frac{1+i}{4\sqrt[3]{\omega}}
+\left(i \sqrt{2} \alpha _2 \left(i+\omega^{2/3}\right)-\sqrt[4]{5} \sqrt{\alpha _1} \left(i-\omega^{2/3}\right)\right)\\
+\tan1°&=i\cdot\frac{\sqrt[4]{5} \sqrt{\alpha _1} \left(1+i \omega^{2/3}\right)-\sqrt{2} \alpha _2 \left(i+\omega^{2/3}\right)}{\sqrt[4]{5} \sqrt{\alpha _1} \left(1-i \omega^{2/3}\right)-\sqrt{2} \alpha _2 \left(i-\omega^{2/3}\right)}
+\end{aligned}
+$$
+
+可以发现, 并不需要线性, 实际一般会使用分段函数.
