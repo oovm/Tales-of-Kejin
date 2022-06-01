@@ -45,3 +45,11 @@ I tan1x / tan1y - Tan[Pi / 180] // N // Chop
 Clear[a1, a2, w1, w2]
 FullSimplify[w1 w2^(1 / 3) + I w1^(1 / 3) w2 /. {w1 -> w, w2 -> w^2}, Assumptions -> {w > 0}]
 FullSimplify[w1 w2^(1 / 3) - I w1^(1 / 3) w2 /. {w1 -> w, w2 -> w^2}, Assumptions -> {w > 0}]
+
+
+
+With[
+    {t = x / (1 - x^3)^(1 / 3)},
+    (Log[1 + t] - (-1)^(1 / 3) Log[(-1)^(1 / 3) - t] + (-1)^(2 / 3) Log[(-1)^(2 / 3) + t]) / 3
+]
+D[%, x] // FullSimplify

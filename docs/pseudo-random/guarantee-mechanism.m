@@ -36,3 +36,9 @@ ListLinePlot[
     PlotLegends -> {"\:539f\:59cb\:6982\:7387\:6a21\:578b", "\:4f2a\:968f\:673a\:6a21\:578b", "\:4fdd\:5e95\:4fee\:6b63\:6a21\:578b"},
     PlotLabel -> Text@"\:7d2f\:8ba1\:6982\:7387"
 ]
+
+
+(*硬保底*)
+Clear["Global`*"];
+p[n_]:=a;
+Sum[i p[i]*Product[1-p[k],{k,1,i-1}],{i,1,n-1}]+n*Product[1-p[k],{k,1,n-1}]//FullSimplify

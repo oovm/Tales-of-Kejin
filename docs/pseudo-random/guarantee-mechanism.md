@@ -47,19 +47,69 @@
 
 若原始概率是 $1\%$, 保底要一百次, 综合概率约 $1.6\%$, 期望是 $2.5$ 次.
 
-### 数学推算
+### 数学建模
 
-直接取最后一次
+设原始概率为 $p$, 综合概率为 $P_{\text{real}}$.
 
-$$E(a)=\sum _{i=1}^{\left\lceil 1/a\right\rceil } i\times a (1-a)^{i-1}
-=\frac{1}{a}\left(1-(1-a)^{\left\lceil 1/a\right\rceil } \left(a\times \left\lceil1/a\right\rceil +1\right)\right)$$
+令 $n$ 为保底的次数, 第 $n$ 抽必出, $P(X=i)$ 表示第 $i$ 抽正好出的概率.
 
-$$E(a)=\frac{1}{a}\left(1-2 (1-a)^{1/a}\right)$$
 
-$$p(a) = \frac{a}{1-2 \sqrt[a]{1-a}}$$
+$$
+\begin{aligned}
+P(X=i)&=p_i \prod _{k=1}^{i-1} \left(1-p_k\right) = p (1-p)^{i-1}\\
+P(X=n)&=\prod _{k=1}^{n-1} \left(1-p_k\right) = (1-p)^{n-1}
+\end{aligned}
+$$
+
+那么总的期望就是
+
+$$
+\begin{aligned}
+E(X)
+&= \sum_{i=1}^{n-1}i×P(X=i)+n×P(X=n)\\
+&= \frac{p n (1-p)^n-p (1-p)^n+(1-p)^n+p-1}{p^2-p} + n(1-p)^{n-1}\\
+&= \frac{1-(1-p)^n}{p}
+\end{aligned}
+$$
+
+于是我们得到了综合概率和基本概率的关系式:
+
+$$
+P_{\text{real}}(p,n) = \frac{p}{1-(1-p)^n}
+$$
+
 
 
 ### 1.6 法则推导
+
+概率的倒数上取整
+
+比如 30, 期望第四次
+
+$n = \left\lceil 1/p\right\rceil$
+
+我们来算一下这个斜率
+
+$$
+\begin{aligned}
+k=\lim_{p\to0}\frac{1}{p}P_{\text{real}}(p, \left\lceil 1/p\right\rceil)
+=\lim_{p\to0}\frac{1}{1-\sqrt[p]{1-p}}
+=\frac{e}{e-1}
+\end{aligned}
+$$
+
+数值计算表明 $$k≈1.58198$$
+
+
+也就是说如果基本概率 $p$ 足够小, 比如说 $p < 10\%$, 那么可以直接乘 $1.6$ 估算综合概率.
+
+
+### 十一连
+
+有一种机制是十连抽给你报 11 个, 如果一个也没有, 那么
+
+
+
 
 
 ### 硬保底总结
@@ -67,5 +117,4 @@ $$p(a) = \frac{a}{1-2 \sqrt[a]{1-a}}$$
 硬保底的缺点是太硬了, 玩家感知太强烈, 不是那么的随机, 和施舍给你似的.
 
 因此发展出了不是那么硬的累进保底制, 简称为软保底.
-
 
