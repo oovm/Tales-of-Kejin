@@ -1,15 +1,45 @@
-氪皇默示录 ---- Apocalypse of Kejin
-===================================
+Panduck document conversion tool
+================================
 
-> 氪皇憔悴 非酋落泪
+Conversion tool by rust, inspired by [pandoc]().
 
-## 目录
+## Formats
 
-### 欧皇抽卡论
+### Conversion
+
+#### From (Text/Binary)
+
+- [x] Common Markdown
+- [x] Github Favored Markdown
+- [x] Pandoc Markdown (json)
+- [x] HTML
+- [x] Jupyter (ipynb)
+- [x] Wiki
+- [ ] Org-mode
+- [ ] reStructuredText (rst)
+- [ ] Rich Text Format (rtf)
+- [ ] Office Word (docx)
+- [ ] Office Excel (xls, xlsx, xlsm, xlsb, xla, xlam)
+- [x] CSV/TSV
+- [ ] Open Document Spread Sheets(ods)
+- [ ] TeX
+- [ ] BibTeX
+
+#### Into (Rust + Text)
+
+- [x] HTML
+- [x] yew (+html_vdom)
+- [x] sycamore (+html_dom)
+- [ ] pdf
+- [ ] ebook
+- [ ] zola
+
+### Highlights
+
+- Text(txt)
 
 
-### 氪皇集卡论
 
+## Developers
 
-### 赌狗强化论
 

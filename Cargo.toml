@@ -1,0 +1,22 @@
+[workspace]
+
+members = ["projects/*"]
+default-members = [
+    "projects/panduck-online",
+    "projects/panduck-core",
+    "projects/panduck-pdf",
+    "projects/panduck-html",
+    "projects/panduck-sycamore",
+]
+exclude = [
+    "projects/web-book",
+    "projects/tex-book"
+]
+
+[profile.release]
+lto = true
+opt-level = "s"
+
+[workspace.metadata.release]
+push = false
+tag = false

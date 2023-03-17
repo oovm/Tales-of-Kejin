@@ -1,0 +1,15 @@
+{
+    "scripts": {
+        "update": "yarn upgrade-interactive --latest",
+        "test": "yarn install && yarn start",
+        "start": "vuepress dev docs",
+        "build": "vuepress build docs",
+        "deploy": "vuepress build docs"
+    },
+    "dependencies": {
+        "mathjax3": "3.0.0-beta.4",
+        "vuepress": "1.9.7",
+        "vuepress-plugin-mathjax": "1.2.8"
+    },
+    "devDependencies": {}
+}
